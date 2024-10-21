@@ -1,0 +1,61 @@
+{
+    "function": "bin.ffn.main",
+    "gpus": [
+        "NVIDIA RTX A6000"
+    ],
+    "config": {
+        "seed": 0,
+        "batch_size": 256,
+        "patience": 16,
+        "n_epochs": Infinity,
+        "data": {
+            "seed": 0,
+            "cache": true,
+            "path": "/data/Blob_WestJP/xumeng/data/tabular/tabr/data/california",
+            "num_policy": "quantile",
+            "cat_policy": null,
+            "y_policy": "standard"
+        },
+        "model": {
+            "num_embeddings": null,
+            "backbone": {
+                "type": "MLP",
+                "n_blocks": 1,
+                "d_layer": 64,
+                "dropout": 0.0,
+                "activation": "ReLU"
+            }
+        },
+        "optimizer": {
+            "type": "AdamW",
+            "lr": 0.001,
+            "weight_decay": 0.0
+        }
+    },
+    "n_parameters": 641,
+    "prediction_type": null,
+    "best_epoch": 306,
+    "metrics": {
+        "train": {
+            "rmse": 0.505511386944378,
+            "mae": 0.35588344044258235,
+            "r2": 0.8102839655105334,
+            "score": -0.505511386944378
+        },
+        "val": {
+            "rmse": 0.5268739243760956,
+            "mae": 0.36425961648980376,
+            "r2": 0.7870982609733699,
+            "score": -0.5268739243760956
+        },
+        "test": {
+            "rmse": 0.5358446529160521,
+            "mae": 0.37563978517726326,
+            "r2": 0.7798010549981497,
+            "score": -0.5358446529160521
+        }
+    },
+    "time": "0:00:32",
+    "chunk_size": null,
+    "eval_batch_size": 32768
+}

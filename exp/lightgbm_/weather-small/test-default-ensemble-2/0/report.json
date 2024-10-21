@@ -1,0 +1,38 @@
+{
+    "function": "bin.ensemble.main",
+    "config": {
+        "seeds": [
+            0,
+            1
+        ]
+    },
+    "single_model_function": "bin.lightgbm_.main",
+    "data": "/data/Blob_WestJP/xumeng/data/tabular/tabr/resample/weather-small",
+    "prediction_type": null,
+    "metrics": {
+        "train": {
+            "rmse": 1.2439420648946036,
+            "mae": 0.9452114768257953,
+            "r2": 0.9853319515348741,
+            "nrmse": 0.07999905737851014,
+            "nmae": 0.060787418437835854,
+            "score": -1.2439420648946036
+        },
+        "val": {
+            "rmse": 1.8111385564074767,
+            "mae": 1.3407755422152774,
+            "r2": 0.9688752710098643,
+            "nrmse": 0.11583613234984617,
+            "nmae": 0.08575282759509793,
+            "score": -1.8111385564074767
+        },
+        "test": {
+            "rmse": 1.7986067050250956,
+            "mae": 1.3378303681530748,
+            "r2": 0.9630942222525857,
+            "nrmse": 0.1213608351607398,
+            "nmae": 0.09026999003506905,
+            "score": -1.7986067050250956
+        }
+    }
+}

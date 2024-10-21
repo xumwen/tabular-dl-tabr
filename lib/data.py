@@ -67,6 +67,12 @@ class Dataset(Generic[T]):
             assert self.is_regression
         for key in ['X_num', 'X_bin']:
             if key in self.data:
+                # Fill nan
+                for x in self.data[key].values():
+                    if isinstance(x, np.ndarray):
+                        x[np.isnan(x)] = 0
+                    else:
+                        x[x.isnan()] = 0
                 assert all(
                     not (
                         np.isnan(x).any()
@@ -213,10 +219,13 @@ class Dataset(Generic[T]):
 
     def cat_cardinalities(self) -> list[int]:
         unique = np.unique if self._is_numpy() else torch.unique
+        # Fix bug that test set may have unseen feature categories
+        if self.X_cat is not None:
+            all_X_cat = torch.concat([self.X_cat['train'], self.X_cat['val'], self.X_cat['test']])
         return (
             []
             if self.X_cat is None
-            else [len(unique(column)) for column in self.X_cat['train'].T]
+            else [len(unique(column)) for column in all_X_cat.T]
         )
 
     def calculate_metrics(
@@ -237,6 +246,8 @@ class Dataset(Generic[T]):
                 self.task_type,
                 prediction_type,
                 None if self.y_info is None else self.y_info.std,
+                None if self.y_info is None else self.y_info.mean,
+                None if self.is_regression else self.n_classes(),
             )
             for part in predictions
         }
@@ -354,12 +365,14 @@ def build_dataset(
     dataset = Dataset.from_dir(path, score)
 
     if dataset.X_num is None:
-        assert num_policy is None
+        # assert num_policy is None
+        print('No numerical features')
     elif num_policy is not None:
         dataset.data['X_num'] = transform_num(dataset.X_num, num_policy, seed)
 
     if dataset.X_cat is None:
-        assert cat_policy is None
+        # assert cat_policy is None
+        print('No categorical features')
     elif cat_policy is not None:
         dataset.data['X_cat'] = transform_cat(dataset.X_cat, cat_policy)
         if cat_policy == CatPolicy.ONE_HOT:

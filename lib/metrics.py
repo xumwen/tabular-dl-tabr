@@ -45,7 +45,10 @@ def calculate_metrics(
     task_type: Union[str, TaskType],
     prediction_type: Union[None, str, PredictionType],
     y_std: Optional[float],
+    y_mean: Optional[float],
+    n_classes: Optional[int],
 ) -> dict[str, Any]:
+    eps = 1e-5
     task_type = TaskType(task_type)
     if prediction_type is not None:
         prediction_type = PredictionType(prediction_type)
@@ -54,10 +57,16 @@ def calculate_metrics(
         assert prediction_type is None
         if y_std is None:
             y_std = 1.0
+        if y_mean is None:
+            y_mean = 0.0
+        y_true_denorm = y_true * y_std + y_mean
+        y_pred_denorm = y_pred * y_std + y_mean
         result = {
             'rmse': sklearn.metrics.mean_squared_error(y_true, y_pred) ** 0.5 * y_std,
             'mae': sklearn.metrics.mean_absolute_error(y_true, y_pred) * y_std,
             'r2': sklearn.metrics.r2_score(y_true, y_pred),
+            'nrmse': sklearn.metrics.mean_squared_error(y_true_denorm, y_pred_denorm) ** 0.5 / (np.mean(np.abs(y_true_denorm)) + eps),
+            'nmae': sklearn.metrics.mean_absolute_error(y_true_denorm, y_pred_denorm) / (np.mean(np.abs(y_true_denorm)) + eps),
         }
     else:
         assert prediction_type is not None
@@ -70,4 +79,6 @@ def calculate_metrics(
             result['cross-entropy'] = sklearn.metrics.log_loss(y_true, probs)
         if task_type == TaskType.BINCLASS and probs is not None:
             result['roc-auc'] = sklearn.metrics.roc_auc_score(y_true, probs)
+        if task_type == TaskType.MULTICLASS and len(np.unique(y_true)) == n_classes:
+            result['roc-auc'] = sklearn.metrics.roc_auc_score(y_true, probs, multi_class='ovr')
     return result

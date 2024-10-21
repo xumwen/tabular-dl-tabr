@@ -78,6 +78,7 @@ def main(
 
         predictions = {}
         for part in ['train', 'val', 'test']:
+            print(part, single_predictions[0][part].shape)
             stacked_predictions = np.stack([x[part] for x in single_predictions])  # type: ignore[code]
             if dataset.is_binclass:
                 if first_report['prediction_type'] == 'logits':

@@ -1,0 +1,27 @@
+seed = 0
+batch_size = 1024
+patience = 16
+n_epochs = inf
+
+[data]
+seed = 0
+cache = false
+path = ":data/covtype"
+num_policy = "quantile"
+cat_policy = "ordinal"
+y_policy = "__null__"
+
+[optimizer]
+type = "AdamW"
+lr = 1e-04
+weight_decay = 1e-05
+
+[model]
+num_embeddings = "__null__"
+
+[model.backbone]
+type = "MLP"
+n_blocks = 4
+d_layer = 512
+dropout = 0.1
+activation = "ReLU"

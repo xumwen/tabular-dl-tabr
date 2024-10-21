@@ -38,11 +38,11 @@ class Config:
             assert self.data['cat_policy'] in [None, 'one-hot']
         assert 'early_stopping_rounds' in self.fit
         assert 'device' not in self.model, 'Use "device_type" argument instead.'
-        if self.model.get('device_type') == 'gpu':
+        # if self.model.get('device_type') == 'gpu':
             # In fact, in our environment, LightGBM does not support GPU.
-            assert os.environ.get('CUDA_VISIBLE_DEVICES')
-        else:
-            assert not os.environ.get('CUDA_VISIBLE_DEVICES')
+            # assert os.environ.get('CUDA_VISIBLE_DEVICES')
+        # else:
+            # assert not os.environ.get('CUDA_VISIBLE_DEVICES')
 
 
 def main(

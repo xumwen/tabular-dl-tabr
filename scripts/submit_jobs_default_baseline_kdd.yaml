@@ -1,0 +1,48 @@
+description: TabR
+
+target:
+  service: sing
+  name: msrresrchvc
+  workspace_name: epeastus
+
+# name: msrresrchvc, msroctovc
+environment:
+  registry: singularitybase.azurecr.io
+  image: base/job/pytorch/acpt-2.2.1-py3.10-cuda12.1:20240312T225111416
+
+code:
+  # local directory of the code. this will be uploaded to the server.
+  local_dir: $CONFIG_DIR/..
+
+storage:
+  shared_datastore:
+    # storage_account_name: blob4wjp
+    # container_name: shared
+    # mount_dir: /data/Blob
+    storage_account_name: epeastus
+    container_name: cov19
+    mount_dir: /data/Blob_EastUS
+
+
+
+search:
+  job_template:
+    name: baseline_default_{experiment_name:s}_{worker_id}
+    identity: managed 
+    sku: 40G1-A100
+    sla_tier: Premium
+    priority: high
+    submit_args:
+      max_run_duration_seconds: 1200000
+      env:
+        _AZUREML_SINGULARITY_JOB_UAI: "/subscriptions/e033d461-1923-44a7-872b-78f1d35a86dd/resourcegroups/Shun/providers/Microsoft.ManagedIdentity/userAssignedIdentities/epeastus_mi" 
+    command:
+    - pip install -r requirements.txt
+    - pip list
+    - echo {worker_id}
+    - python scripts/submit_jobs_default_baseline_kdd.py --cuda_ids 0 --worker_id {worker_id} --num_workers 8 --config_dir /data/Blob_EastUS/xumeng/projects/TabR/exp/default_all_baseline_kdd_1018
+  max_trials: 100
+  type: grid
+  params:
+    - name: worker_id
+      values: [0,1,2,3,4,5,6,7]

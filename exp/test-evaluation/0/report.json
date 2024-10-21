@@ -1,0 +1,65 @@
+{
+    "function": "bin.ft_transformer.main",
+    "gpus": [
+        "NVIDIA RTX A6000"
+    ],
+    "config": {
+        "seed": 0,
+        "batch_size": 1024,
+        "patience": 16,
+        "n_epochs": Infinity,
+        "data": {
+            "seed": 0,
+            "cache": false,
+            "path": "/data/Blob_EastUS/xumeng/data/tabular/tabr/resample/alcohol-effects-on-study",
+            "num_policy": "quantile",
+            "cat_policy": "ordinal",
+            "y_policy": "standard"
+        },
+        "optimizer": {
+            "type": "AdamW",
+            "lr": 0.0001,
+            "weight_decay": 1e-05
+        },
+        "model": {
+            "d_token": 192,
+            "n_blocks": 3,
+            "attention_dropout": 0.2,
+            "ffn_d_hidden_factor": 1.33333,
+            "ffn_dropout": 0.1,
+            "residual_dropout": 0.0
+        }
+    },
+    "n_parameters": 901051,
+    "prediction_type": null,
+    "best_epoch": 63,
+    "metrics": {
+        "train": {
+            "rmse": 1.3092377119240903,
+            "mae": 0.8659978478210668,
+            "r2": 0.8910773703768202,
+            "nrmse": 0.11508476000150988,
+            "nmae": 0.07612303585471375,
+            "score": -1.3092377119240903
+        },
+        "val": {
+            "rmse": 2.0339457450183467,
+            "mae": 1.1662630948750774,
+            "r2": 0.7131933708744085,
+            "nrmse": 0.18949786837215557,
+            "nmae": 0.10865794931109958,
+            "score": -2.0339457450183467
+        },
+        "test": {
+            "rmse": 1.326016313198748,
+            "mae": 0.9506890248541637,
+            "r2": 0.8623456403404134,
+            "nrmse": 0.11530566596227786,
+            "nmae": 0.08266853835541661,
+            "score": -1.326016313198748
+        }
+    },
+    "time": "0:00:04",
+    "chunk_size": null,
+    "eval_batch_size": 32768
+}

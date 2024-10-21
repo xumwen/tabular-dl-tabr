@@ -257,6 +257,7 @@ def summarize(report: JSONDict) -> JSONDict:
 def run_Function_cli(function: Function, argv: Optional[list[str]] = None) -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument('config', metavar='FILE')
+    parser.add_argument('--output_dir', type=str)
     parser.add_argument('--force', action='store_true')
     if 'continue_' in inspect.signature(function).parameters:
         can_continue_ = True
@@ -273,9 +274,17 @@ def run_Function_cli(function: Function, argv: Optional[list[str]] = None) -> No
 
     config_path = env.get_path(args.config)
     assert config_path.exists()
+    
+    # Output
+    output_dir = args.output_dir
+    config_name = str(config_path.with_suffix('')).split('/exp/')[-1]
+    output_path = os.path.join(output_dir, config_name)
+    # Create directory
+    os.makedirs(output_path, exist_ok=True)
+    
     function(
         load_config(config_path),
-        config_path.with_suffix(''),
+        output_path,
         force=args.force,
         **({'continue_': args.continue_} if can_continue_ else {}),
     )
@@ -531,4 +540,5 @@ def run_cli(fn: Callable, argv: Optional[list[str]] = None):
                 **({'default': arg.default} if has_default else {}),
             )
     args = parser.parse_args(*(() if argv is None else (argv,)))
+    print(args)
     return fn(**vars(args))

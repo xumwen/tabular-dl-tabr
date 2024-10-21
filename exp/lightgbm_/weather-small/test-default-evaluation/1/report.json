@@ -1,0 +1,57 @@
+{
+    "function": "bin.lightgbm_.main",
+    "gpus": [
+        "NVIDIA RTX A6000",
+        "NVIDIA RTX A6000",
+        "NVIDIA RTX A6000",
+        "NVIDIA RTX A6000"
+    ],
+    "config": {
+        "seed": 1,
+        "data": {
+            "seed": 0,
+            "num_policy": null,
+            "cache": false,
+            "path": "/data/Blob_WestJP/xumeng/data/tabular/tabr/resample/weather-small",
+            "cat_policy": null,
+            "y_policy": "standard"
+        },
+        "model": {
+            "n_estimators": 4000,
+            "n_jobs": 4
+        },
+        "fit": {
+            "early_stopping_rounds": 3999,
+            "verbose": true
+        }
+    },
+    "prediction_type": null,
+    "time": "0:01:08",
+    "best_iteration": 3966,
+    "metrics": {
+        "train": {
+            "rmse": 1.260629592176465,
+            "mae": 0.9583708919131784,
+            "r2": 0.984935767036834,
+            "nrmse": 0.08107224759507475,
+            "nmae": 0.061633712532618165,
+            "score": -1.260629592176465
+        },
+        "val": {
+            "rmse": 1.826093415159187,
+            "mae": 1.3544771362475145,
+            "r2": 0.9683591452423219,
+            "nrmse": 0.11679260969073807,
+            "nmae": 0.08662914907132549,
+            "score": -1.826093415159187
+        },
+        "test": {
+            "rmse": 1.799629154637575,
+            "mae": 1.356303857564946,
+            "r2": 0.9630522508494842,
+            "nrmse": 0.12142982511218753,
+            "nmae": 0.09151648785516545,
+            "score": -1.799629154637575
+        }
+    }
+}

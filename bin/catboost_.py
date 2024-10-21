@@ -42,10 +42,10 @@ class Config:
         assert (
             'task_type' in self.model
         ), 'task_type significantly affects performance, so must be set explicitly'
-        if self.model['task_type'] == 'GPU':
-            assert os.environ.get('CUDA_VISIBLE_DEVICES')
-        else:
-            assert not os.environ.get('CUDA_VISIBLE_DEVICES')
+        # if self.model['task_type'] == 'GPU':
+            # assert os.environ.get('CUDA_VISIBLE_DEVICES')
+        # else:
+            # assert not os.environ.get('CUDA_VISIBLE_DEVICES')
 
 
 def main(

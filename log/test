@@ -1,0 +1,317 @@
+Namespace(path=PosixPath('/data/Blob_WestJP/xumeng/projects/TabR/exp_from_eastus/default_baseline_1016/tabr/regression-cat-medium-0-Mercedes_Benz_Greener_Manufacturing/default-evaluation'), function='bin.tabr.main', n_seeds=15, n_ensembles=3, ensemble_size=5, continue_=False, force=True)
+================================================================================
+[>>>] /data/Blob_WestJP/xumeng/projects/TabR/exp_from_eastus/default_baseline_1016/tabr/regression-cat-medium-0-Mercedes_Benz_Greener_Manufacturing/default-evaluation/0 | 2024-10-17 09:48:06.566878
+--------------------------------------------------------------------------------
+{'seed': 0,
+ 'data': {'seed': 0,
+          'cache': False,
+          'path': '/data/Blob_EastUS/xumeng/data/tabular/tabr/resample/regression-cat-medium-0-Mercedes_Benz_Greener_Manufacturing',
+          'num_policy': 'quantile',
+          'cat_policy': 'ordinal',
+          'y_policy': 'standard'},
+ 'model': {'num_embeddings': None,
+           'd_main': 265,
+           'context_dropout': 0.38920071545944357,
+           'd_multiplier': 2.0,
+           'encoder_n_blocks': 0,
+           'predictor_n_blocks': 1,
+           'mixer_normalization': 'auto',
+           'dropout0': 0.38852797479169876,
+           'dropout1': 0.0,
+           'normalization': 'LayerNorm',
+           'activation': 'ReLU'},
+ 'context_size': 96,
+ 'optimizer': {'type': 'AdamW',
+               'lr': 0.0003121273641315169,
+               'weight_decay': 1.2260352006404615e-06},
+ 'batch_size': 512,
+ 'patience': 16,
+ 'n_epochs': inf}
+--------------------------------------------------------------------------------
+No numerical features
+
+[...] /data/Blob_WestJP/xumeng/projects/TabR/exp_from_eastus/default_baseline_1016/tabr/regression-cat-medium-0-Mercedes_Benz_Greener_Manufacturing/default-evaluation/0 | 0:00:00
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(2, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 3])
+2
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(12, device='cuda:0')
+tensor(11, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 12])
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([512, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(2, device='cuda:0') tensor(1, device='cuda:0')
+torch.Size([512, 3])
+2
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(12, device='cuda:0')
+tensor(11, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([512, 12])
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(2, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 3])
+2
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(12, device='cuda:0')
+tensor(11, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 12])
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([512, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(2, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([512, 3])
+2
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(12, device='cuda:0')
+tensor(11, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([512, 12])
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(2, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 3])
+2
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(12, device='cuda:0')
+tensor(11, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 12])
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([512, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(2, device='cuda:0') tensor(2, device='cuda:0')
+torch.Size([512, 3])
+2
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(12, device='cuda:0')
+tensor(11, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([512, 12])
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(2, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 3])
+2
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(12, device='cuda:0')
+tensor(11, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 12])
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([512, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(2, device='cuda:0') tensor(2, device='cuda:0')
+torch.Size([512, 3])
+2
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(12, device='cuda:0')
+tensor(11, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([512, 12])
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(2, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 3])
+2
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(12, device='cuda:0')
+tensor(11, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 12])
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([512, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(2, device='cuda:0') tensor(2, device='cuda:0')
+torch.Size([512, 3])
+2
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(12, device='cuda:0')
+tensor(11, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([512, 12])
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(2, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 3])
+2
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(12, device='cuda:0')
+tensor(11, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3063, 12])
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([512, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(2, device='cuda:0') tensor(2, device='cuda:0')
+torch.Size([512, 3])
+2
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(12, device='cuda:0')
+tensor(11, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([512, 12])
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3072, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(2, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3072, 3])
+2
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(12, device='cuda:0')
+tensor(11, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3072, 12])
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([503, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(2, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([503, 3])
+2
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(12, device='cuda:0')
+tensor(11, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([503, 12])
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3575, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(2, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3575, 3])
+2
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(12, device='cuda:0')
+tensor(11, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3575, 12])
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([378, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(2, device='cuda:0') tensor(2, device='cuda:0')
+torch.Size([378, 3])
+2
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(12, device='cuda:0')
+tensor(11, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([378, 12])
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3575, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(2, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3575, 3])
+2
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(12, device='cuda:0')
+tensor(11, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([3575, 12])
+total cat column: 3
+0
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(7, device='cuda:0')
+tensor(6, device='cuda:0') tensor(0, device='cuda:0')
+torch.Size([256, 7])
+1
+tensor([ 7,  3, 12], device='cuda:0')
+tensor(3, device='cuda:0')
+tensor(3, device='cuda:0') tensor(2, device='cuda:0')
+torch.Size([256, 3])
+2

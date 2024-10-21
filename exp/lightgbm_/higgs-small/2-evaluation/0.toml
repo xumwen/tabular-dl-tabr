@@ -4,7 +4,7 @@ seed = 0
 seed = 0
 num_policy = "__null__"
 cache = true
-path = ":data/higgs-small"
+path = "/data/Blob_WestJP/xumeng/data/tabular/tabr/data/higgs-small"
 cat_policy = "__null__"
 y_policy = "__null__"
 

@@ -9,7 +9,7 @@ n_epochs = inf
 [data]
 seed = 0
 cache = true
-path = ":data/california"
+path = "/data/Blob_WestJP/xumeng/data/tabular/tabr/data/california"
 num_policy = "quantile"
 cat_policy = "__null__"
 y_policy = "standard"
